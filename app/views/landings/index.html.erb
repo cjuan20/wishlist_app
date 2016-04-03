@@ -1,57 +1,32 @@
 <%= stylesheet_link_tag "style" %>
 
-<h1>The Wishlist</h1>
 
-<section id="main" role="main">
-  <h1>Search Merchandise</h1>
-  <form action="/" method="GET">
-    <input type="text" placeholder="Search millions of products..." value="<%= @search %>" name="search"/>
-    <input type="submit" value="GO!" style=""/>
-  </form>
+<section id="main" role="main" style="display: <%= @showTrend%>">
 
-  <% if @products.length > 0 %>
-    <section id="search-results">
-      <h2>Search results for <%= @search %></h2>
-      <ul>
-      	<% @products.each do |p| %>
-          <li>
-        		<img src="<%= p['image'] %>" /><br/>
-            <%= p['name'] %><br/>
-            <%= p['price'] %><br/>           
-            <% if p['inStock'] = true %>
-            	In Stock<br/>
-	            <a href="<%= p['url'] %>" target="_blank">BUY NOW</a>
-            <% else %>
-	            Out Of Stock
-            <% end %>
-          </li>
-      	<% end %>
+  <%= render :partial => 'trend' %>
 
-      </ul>
-    </section>
-  <% end %>
+
 </section>
 
-<div class="products" id="trending">
-	<h3>Trending Merchandise</h3>
-  <% if @trends.length > 0 %>
-	 <section id="trending-results">
-	      <ul>
-	      	<% @trends.each do |p| %>
-	          <li>
-	        		<img src="<%= p['image'] %>" /><br/>
-	            <a href="<%= p['url'] %>" target="_blank"><%= p['name'] %></a><br/>
-	            <%= p['price'] %><br/>           
-	          </li>
-	      	<% end %>
-	      </ul>
-	    </section>
-  <% end %>
-</div>
 
 	<% if user_signed_in? %>
+		<img id="user-img" src="<%= current_user.img%>">
 		<h3><%= current_user.name%></h3>
 		<h4><%= current_user.city%></h4>
-		<img src="<%= current_user.img%>">
+
+  	<% current_user.lists.each do |list| %>
+			<h4><%= list.name %></h4>
+			<img src="<%= list.image %>">
+			<p><%= list.price %></p>
+			<% if list.stock = true %>
+      	In Stock<br/>
+        <a href="<%= list.url %>" target="_blank">BUY NOW</a><br/>
+      <% else %>
+        Out Of Stock<br/>
+      <% end %>
+
+		  <%= link_to "Delete", list, method: :delete %> 
+
+		<% end %>
 
 	<% end %>
