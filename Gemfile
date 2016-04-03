@@ -1,5 +1,5 @@
-source 'https://rubygems.org'
-
+source 'https://rubygems.org' 
+ruby '2.2.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
@@ -35,6 +35,9 @@ gem 'shopsense-ruby'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+
+# gem rails12, assist Heroku to integrate assets
+gem 'rails_12factor', group: :production
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

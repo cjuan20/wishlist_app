@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get 'secure' => 'landings#secure'
   get 'trend' => 'landings#trend'
 
+  get 'user' => 'landings#user'
 
 end
 
@@ -39,6 +40,6 @@ end
 #                     root GET    /                              landings#index
 #                   secure GET    /secure(.:format)              landings#secure
 #                    trend GET    /trend(.:format)               landings#trend
-
+#                     user GET    /user(.:format)                landings#user
 
 

@@ -5,6 +5,7 @@ class LandingsController < ApplicationController
 	before_action :authenticate_user!, only: :secure
 
 	def index
+
     @list = List.new
   	#Shopsense API Setup 
     client = Shopsense::API.new({'partner_id' => 'uid7849-6112293-28'})
@@ -29,11 +30,12 @@ class LandingsController < ApplicationController
         'url' => product["url"],
       }
     end
+
     # Empty products array
     if session[:show_more] == nil
       session[:show_more] = 20
     end
-    # a search has been performed
+    # More search result has been performed
     if params[:more]
       @products = []
       response = client.search(params[:search], params[:more], params[:more])
@@ -86,12 +88,11 @@ class LandingsController < ApplicationController
     end
 
 		if current_user
+      # Hide trending when user is logged-in
       @showTrend = "none"
-
-			puts "I'm logged in as #{current_user.email} and my name is #{current_user.name}"
 		else 
+      # When user is not logged-in show trending on homepage
       @showTrend = "block"
-			puts "I'm not logged in"
 		end
 	end
 
@@ -129,6 +130,9 @@ class LandingsController < ApplicationController
         'url' => product["url"],
         'inStock' => product["inStock"]
       }
+    end
+
+    def user
     end
     
   end

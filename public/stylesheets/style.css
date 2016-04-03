@@ -66,5 +66,8 @@ ul li {
     height: 200px;
     border: 1px solid;
 }
+
+.hidden {
+	display: none;
 }
 

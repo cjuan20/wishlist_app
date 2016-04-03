@@ -15,12 +15,12 @@
 		
 		<div id="user-nav">	
 		<% if user_signed_in? %>
-		  Hello <strong><%= current_user.name %></strong><span> </span>
-		  <%= link_to "My Profile", root_path %> |
+		  <strong><%= current_user.name %>'s<span><span> <%= link_to " Wishlist", root_path %></strong> |
+		 	<%= link_to "All Users", user_path %> |
+		 	<%= link_to "Trending", trend_path %> |
 		  <%= link_to 'Edit Profile', edit_user_registration_path %> |
-		  <%= link_to "Trend", trend_path %> |
 		  <%= link_to "Logout", destroy_user_session_path, method: :delete %> 
-		  
+
 		<% else %>		  
 			<%= link_to "Home", root_path %> |
 		  <%= link_to "Sign up", new_user_registration_path  %> |

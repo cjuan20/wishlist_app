@@ -7,8 +7,6 @@ class ListsController < ApplicationController
 	def index
 		#Shopsense API Setup 
     client = Shopsense::API.new({'partner_id' => 'uid7849-6112293-28'})
-
-
 	end
 
 	def show

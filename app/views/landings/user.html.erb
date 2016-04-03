@@ -1,0 +1,32 @@
+<h1>All Users</h1>
+
+<% @users = User.all %>
+<% @users.each do |user| %>
+  <a href="#<%= user.name %>" class="show_wishlist" ><img id="user-img" src="<%= user.img %>"></a><br>
+  <%= user.name %><br/>
+  Items in Wishlist: <%= user.lists.count %><br/>
+
+  <% @list = List.new %>
+	<div id="<%= user.name %>" class="hidden">
+	  <% user.lists.each do |l| %>
+	  	<img src="<%= l.image %>" />
+	  		<%= form_for @list do |form| %>
+              <%= form.submit %>
+              <%= form.text_field :name, :value => l.name, :type => "hidden" %></br>
+              <%= form.text_field :price, :value => l.price, :type => "hidden" %></br>
+              <%= form.text_field :image, :value => l.image, :type => "hidden" %></br>
+              <%= form.text_field :url, :value => l.url, :type => "hidden" %></br>
+              <%= form.text_field :stock, :value => l.stock, :type => "hidden" %></br>
+            <% end %>
+	  <% end %>
+</div>
+  <br/>
+<% end %>
+
+<script>
+	 $(".show_wishlist").click(function () {
+        var href = $(this).attr("href");
+    		var showDiv = href
+    		$(showDiv).toggle();
+    });
+</script>
