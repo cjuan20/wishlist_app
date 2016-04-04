@@ -11,7 +11,7 @@
 	  <% user.lists.each do |l| %>
 	  	<img src="<%= l.image %>" />
 	  		<%= form_for @list do |form| %>
-              <%= form.submit %>
+              <%= form.submit :value => 'Add To My WishList'%>
               <%= form.text_field :name, :value => l.name, :type => "hidden" %></br>
               <%= form.text_field :price, :value => l.price, :type => "hidden" %></br>
               <%= form.text_field :image, :value => l.image, :type => "hidden" %></br>

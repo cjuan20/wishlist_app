@@ -16,7 +16,7 @@ class LandingsController < ApplicationController
     raw_trends = JSON.parse(trendingResponse);
     # puts raw_trends;
     trending = raw_trends["trends"];
-    # trending = trending.first(10);
+    trending = trending.first(48);
 
     @trends = trending.map! do |trend|
     	product = trend["product"];
@@ -116,7 +116,7 @@ class LandingsController < ApplicationController
     raw_trends = JSON.parse(trendingResponse);
     # puts raw_trends;
     trending = raw_trends["trends"];
-    # trending = trending.first(10);
+    trending = trending.first(48);
 
     @trends = trending.map! do |trend|
       product = trend["product"];

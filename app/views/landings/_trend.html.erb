@@ -1,16 +1,15 @@
 <div id="trending-container">
-  <h3>Trending Merchandise</h3>
-  <% if @trends.length > 0 %>
-    <ul>
-      <% @trends.each do |p| %>
-        <li>
-          <img src="<%= p['image'] %>" /><br/>
-          <a href="<%= p['url'] %>" target="_blank"><%= p['name'] %></a><br/>
-          <%= p['price'] %><br/> 
 
- 
-        </li>
-      <% end %>
-    </ul>
+  <h2>Trending Merchandise</h2>
+
+  <% if @trends.length > 0 %>
+    <ul><% @trends.each do |p| %>
+      <li>
+        <img id="trending-img" src="<%= p['image'] %>" /><br/>
+        <a href="<%= p['url'] %>" target="_blank"><%= p['name'] %></a><br/>
+        <%= p['price'] %><br/> 
+      </li>
+    <% end %></ul>
  <% end %>
+
 </div>

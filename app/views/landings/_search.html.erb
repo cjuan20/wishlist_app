@@ -1,39 +1,45 @@
-<div id="search-container">
+<section id="search-container">
   <!-- SEARCH -->
   <form id="search-form" action="/" method="GET">
-    <input type="text" placeholder="Search millions of products..." value="<%= @search %>" name="search"/>
+    <input id="search-box" type="text" placeholder="Search millions of products..." value="<%= @search %>" name="search"/>
     <input type="submit" value="SEARCH" style=""/>
   </form>
 
-    <section id="search-results">
+  <div id="search-results">
     <% if @products != nil %>
     <% if @products.length > 0 %> 
       <h2>Top results for <%= @search %></h2>
-      <ul>
-      	<% @products.each do |p| %>
+
+      <ul><% @products.each do |p| %>
           <li>
         		<img src="<%= p['image'] %>" /><br/>
-            <%= p['name'] %><br/>
+            <strong id="search-item-name"><%= p['name'] %></strong><br/>
             <%= p['price'] %><br/>           
             <% if p['inStock'] = true %>
             	In Stock<br/>
-	            <a href="<%= p['url'] %>" target="_blank">BUY NOW</a><br/>
+	            <button><a href="<%= p['url'] %>" target="_blank">BUY NOW</a></button><br/>
             <% else %>
 	            Out Of Stock<br/>
             <% end %>
+
+            <!-- Hidden form to add item to Current User's list -->
             <%= form_for @list do |form| %>
-              <%= form.submit %>
-              <%= form.text_field :name, :value => p['name'], :type => "hidden" %></br>
-              <%= form.text_field :price, :value => p['price'], :type => "hidden" %></br>
-              <%= form.text_field :image, :value => p['image'], :type => "hidden" %></br>
-              <%= form.text_field :url, :value => p['url'], :type => "hidden" %></br>
-              <%= form.text_field :stock, :value => p['inStock'], :type => "hidden" %></br>
+              <%= form.submit :value => 'Add To My WishList', :class => "addlist-button"%>
+              <%= form.text_field :name, :value => p['name'], :type => "hidden" %>
+              <%= form.text_field :price, :value => p['price'], :type => "hidden" %>
+              <%= form.text_field :image, :value => p['image'], :type => "hidden" %>
+              <%= form.text_field :url, :value => p['url'], :type => "hidden" %>
+              <%= form.text_field :stock, :value => p['inStock'], :type => "hidden" %>
             <% end %>
           </li>
       	<% end %>
       </ul>
-        <%= link_to "Show More", root_path(:search => @search, :more => session[:show_more]) %>
-    </section>
-  <% end %>
-  <% end %>
-</div>
+      <br/>
+        <%= link_to "Show More", root_path(:search => @search, :more => session[:show_more]), :class => "showmore-button" %> | <%= link_to "Close Search", root_path, :class => "showmore-button" %>
+      <br/><br/><br/>
+    <% end %>
+    <% end %>
+  </div>
+  <hr/>
+  
+</section>

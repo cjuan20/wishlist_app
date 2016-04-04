@@ -1,25 +1,25 @@
 <div id="trending-container">
-  <h3>Trending Merchandise</h3>
-  <% if @trends.length > 0 %>
-    <ul>
-      <% @trends.each do |p| %>
-        <li>
-          <img src="<%= p['image'] %>" /><br/>
-          <a href="<%= p['url'] %>" target="_blank"><%= p['name'] %></a><br/>
-          <%= p['price'] %><br/> 
-          
-          <!-- Form to Add to list -->
-           <%= form_for @list do |form| %>
-              <%= form.submit %>
-              <%= form.text_field :name, :value => p['name'], :type => "hidden" %></br>
-              <%= form.text_field :price, :value => p['price'], :type => "hidden" %></br>
-              <%= form.text_field :image, :value => p['image'], :type => "hidden" %></br>
-              <%= form.text_field :url, :value => p['url'], :type => "hidden" %></br>
-              <%= form.text_field :stock, :value => p['inStock'], :type => "hidden" %></br>
-            <% end %>
 
-        </li>
-      <% end %>
-    </ul>
+  <h2>Trending Merchandise</h2>
+  <% if @trends.length > 0 %>
+
+    <ul><% @trends.each do |p| %>
+      <li>
+        <img id="trending-img" src="<%= p['image'] %>" /><br/>
+        <a href="<%= p['url'] %>" target="_blank"><%= p['name'] %></a><br/>
+        <%= p['price'] %><br/> 
+        
+        <!-- Form to Add to list -->
+        <%= form_for @list do |form| %>
+          <%= form.submit :value => 'Add To My WishList', :class => "addlist-button"%>
+          <%= form.text_field :name, :value => p['name'], :type => "hidden" %></br>
+          <%= form.text_field :price, :value => p['price'], :type => "hidden" %></br>
+          <%= form.text_field :image, :value => p['image'], :type => "hidden" %></br>
+          <%= form.text_field :url, :value => p['url'], :type => "hidden" %></br>
+          <%= form.text_field :stock, :value => p['inStock'], :type => "hidden" %></br>
+        <% end %>
+      </li>
+    <% end %></ul>
  <% end %>
+
 </div>

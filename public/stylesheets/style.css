@@ -1,50 +1,76 @@
 *{
 	margin: 0;
 	text-align: center;
-
+	font-family: 'Raleway', sans-serif;
 }
 
 body{
 	width: 100%;
 }
 
-nav{
-	background-color: grey;
-	width: 100%;
-	padding-bottom: 20px;
-	padding-top: 14px;
+ul li {
+	list-style: none;
+}
 
+nav{
+	width: 100%;
+	padding-bottom: 0px;
+	padding-top: 14px;
+	font-size: 16px;
+}
+
+nav a{
+	text-decoration: none;
+	color: black;
+}
+
+#app-logo{
+  background-image: url('images/wishlist.png');
+  background-size: 200px;
+  background-repeat: no-repeat;
+  float: left;
+  height: 45px;
+  margin-left: 32px;
+  margin-top: -5px;
+  width: 220px;
 }
 #user-nav{
-  float: left;
-  top: 0;
-  position: absolute;
-  padding-top: 20px;
-  padding-left: 45px;
+  float: right;
+  margin-right: 271px;
+  margin-top: 5px;
 }
 
 #search-form{
-  float: right;
-  margin-right: 90px;
-  margin-top: -45px;
+   position: absolute;
+   right: 46px;
+   margin-top: 3px;
 }
-
-#search-container{
-
-  padding-top: 20px;
-  width: 100%;
+#search-box {
+	width: 148px;
+  text-align: left;
 }
 
 #search-results{
-	display: inline-block;
+  display: inline-block;
+  margin-top: 50px;
+  padding-right: 215px;
+}
+#search-container{
+	padding-bottom: 30px;
+
+}
+
+#search-container ul{
+	padding: 0px;
+
 }
 
 #search-container li{
-	padding-top: 40px;
+	padding-top: 25px;
 }
 
-ul li {
-	list-style: none;
+#search-item-name{
+	font-size: 18px;
 }
 
 #log-in-container{
@@ -52,22 +78,59 @@ ul li {
 
 }
 
-#trending-container li{
-	width: 400px;
-	height: 300px;
-	display: inline;
-	float: left;
-	border: 1px solid black;
+#user-img{
+  border-radius: 100%;
+  width: 200px;
+  height: 200px;
+  border: 1px solid;
 }
 
-#user-img{
-    border-radius: 100%;
-    width: 200px;
-    height: 200px;
-    border: 1px solid;
+.addlist-button{
+  font-size: 40px;
+  margin-top: 8px;
 }
 
 .hidden {
 	display: none;
 }
+
+.showmore-button{
+	font-size: 22px;
+	text-decoration: underline;
+	font-weight: bold;
+}
+
+#trending-container h2{
+	padding-bottom: 20px;
+}
+
+#trending-img{
+  height: 115px;
+  padding: 15px;
+  padding-top: 25px;
+}
+
+#trending-container li{
+  width: 323px;
+  height: 265px;
+  display: inline;
+  float: left;
+  border: 1px solid black;
+}
+
+#userlist-container{
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
 

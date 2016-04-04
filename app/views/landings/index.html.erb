@@ -1,13 +1,10 @@
 <%= stylesheet_link_tag "style" %>
 
-
 <section id="main" role="main" style="display: <%= @showTrend%>">
-
   <%= render :partial => 'trend' %>
-
-
 </section>
 
+<div id="userlist-container">
 
 	<% if user_signed_in? %>
 		<img id="user-img" src="<%= current_user.img%>">
@@ -28,5 +25,6 @@
 		  <%= link_to "Delete", list, method: :delete %> 
 
 		<% end %>
-
 	<% end %>
+
+</div>

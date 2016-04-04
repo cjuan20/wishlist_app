@@ -1,38 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title></title>
+  <title>WishList</title>
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
-  
   <%= stylesheet_link_tag "style" %>
-
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
 </head>
+
 <body>
 	<nav>
-		<h1>The Wishlist</h1>
-		
+	<a href="<%= root_path %>">
+		<div id="app-logo"></div>
+	</a>
 		<div id="user-nav">	
 		<% if user_signed_in? %>
 		  <strong><%= current_user.name %>'s<span><span> <%= link_to " Wishlist", root_path %></strong> |
-		 	<%= link_to "All Users", user_path %> |
 		 	<%= link_to "Trending", trend_path %> |
+			<%= link_to "All Users", user_path %> |
 		  <%= link_to 'Edit Profile', edit_user_registration_path %> |
 		  <%= link_to "Logout", destroy_user_session_path, method: :delete %> 
 
 		<% else %>		  
-			<%= link_to "Home", root_path %> |
 		  <%= link_to "Sign up", new_user_registration_path  %> |
 		  <%= link_to "Login", new_user_session_path %>
 		<% end %> 
-
-
 	</div>
-
+	
 		<%= render :partial => 'landings/search' %>
 	</nav> 
-
 
 
 	<% if notice %>
@@ -44,5 +41,8 @@
 
 <%= yield %>
 
+<script>
+  window.sr = new scrollReveal();
+</script>
 </body>
 </html>
