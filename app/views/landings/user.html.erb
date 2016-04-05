@@ -1,32 +1,39 @@
-<h1>All Users</h1>
+<div id="user-index-container">
+  <h1>All Users</h1>
 
-<% @users = User.all %>
-<% @users.each do |user| %>
-  <a href="#<%= user.name %>" class="show_wishlist" ><img id="user-img" src="<%= user.img %>"></a><br>
-  <%= user.name %><br/>
-  Items in Wishlist: <%= user.lists.count %><br/>
+ <div="userindex-itemlist">
+    <% @users = User.all %>
+    <% @users.each do |user| %>
+    <a href="#<%= user.name %>" class="show_wishlist"><img id="user-img" src="<%= user.img %>"></a><br> 
+    <%= user.name %><br/>
+    Items in Wishlist: <%= user.lists.count %><br/>
 
-  <% @list = List.new %>
-	<div id="<%= user.name %>" class="hidden">
-	  <% user.lists.each do |l| %>
-	  	<img src="<%= l.image %>" />
-	  		<%= form_for @list do |form| %>
-              <%= form.submit :value => 'Add To My WishList'%>
-              <%= form.text_field :name, :value => l.name, :type => "hidden" %></br>
-              <%= form.text_field :price, :value => l.price, :type => "hidden" %></br>
-              <%= form.text_field :image, :value => l.image, :type => "hidden" %></br>
-              <%= form.text_field :url, :value => l.url, :type => "hidden" %></br>
-              <%= form.text_field :stock, :value => l.stock, :type => "hidden" %></br>
+    <% @list = List.new %>
+  	<div id="<%= user.name %>" class="hidden">
+      <ul id="user-index-ul"><% user.lists.each do |l| %>
+        <li id="user-index-li">
+    	  	<img src="<%= l.image %>" />
+    	  		<%= form_for @list do |form| %>
+              <%= form.submit :value => 'Add To My WishList', :class => "addlist-button"%>
+              <%= form.text_field :name, :value => l.name, :type => "hidden" %>
+              <%= form.text_field :price, :value => l.price, :type => "hidden" %>
+              <%= form.text_field :image, :value => l.image, :type => "hidden" %>
+              <%= form.text_field :url, :value => l.url, :type => "hidden" %>
+              <%= form.text_field :stock, :value => l.stock, :type => "hidden" %>
             <% end %>
-	  <% end %>
-</div>
+          </li>
+  	    <% end %>
+      </ul>
+    </div>
   <br/>
-<% end %>
+  <% end %>
+ </div>
+  <script>
+  	 $(".show_wishlist").click(function () {
+          var href = $(this).attr("href");
+      		var showDiv = href
+      		$(showDiv).toggle();
+      });
+  </script>
 
-<script>
-	 $(".show_wishlist").click(function () {
-        var href = $(this).attr("href");
-    		var showDiv = href
-    		$(showDiv).toggle();
-    });
-</script>
+</div>

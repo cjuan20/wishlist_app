@@ -12,6 +12,14 @@ ul li {
 	list-style: none;
 }
 
+a:visited{
+	color: black;
+}
+
+a{
+	color: #18332B;
+}
+
 nav{
 	width: 100%;
 	padding-bottom: 0px;
@@ -23,6 +31,7 @@ nav a{
 	text-decoration: none;
 	color: black;
 }
+
 
 #app-logo{
   background-image: url('images/wishlist.png');
@@ -72,7 +81,11 @@ nav a{
 #search-item-name{
 	font-size: 18px;
 }
-
+#search-button{
+	color: white;
+  background: #18332B;
+  border:none;
+}
 #log-in-container{
 	display: inline-block;
 
@@ -82,12 +95,14 @@ nav a{
   border-radius: 100%;
   width: 200px;
   height: 200px;
-  border: 1px solid;
+  border: 1px solid black;
+  margin-bottom: 8px;
 }
 
 .addlist-button{
   font-size: 40px;
   margin-top: 8px;
+  color: #617984;
 }
 
 .hidden {
@@ -101,7 +116,7 @@ nav a{
 }
 
 #trending-container h2{
-	padding-bottom: 20px;
+	padding-bottom: 30px;
 }
 
 #trending-img{
@@ -115,34 +130,119 @@ nav a{
   height: 265px;
   display: inline;
   float: left;
-  border: 1px solid black;
+  border: 1px solid #657783;
+  margin-bottom: -1px;
+  margin-left: -4px;
+  margin-right: 3px;
+
 }
+
+
+#user-city{
+	text-decoration: overline;
+	margin-bottom: 8px;
+}
+
 
 #useritems-img{
   height: 115px;
   padding: 15px;
   padding-top: 25px;
 }
+#useritems-container{
+	margin-bottom: 40px;
 
+} 
+#useritems-container ul{
+  margin-left: -35px;
+}
 
 #useritems-container li{
   width: 323px;
   height: 280px;
   display: inline-block;
-  /*float: left;*/
-  border: 1px solid black;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
+  padding-top: 20px;
+}
+#useritems-container h4{
+  color: #657783;
 }
 
+#useritems-img {
+  height: 115px;
+  padding: 15px;
+  padding-top: 25px;
+}
+
+#useritems-container a{
+	text-decoration: none;
+}
+#buy-button{
+	background-color:#18332B;
+	padding: 10px;
+	border-radius: 40px;
+	color: white;
+}
+#useritems-container { 
+	display: inline-block;
+}
 #useritems-container h4 {
 	height: 38px;
 }
+#user-index-container{
+	margin-bottom: 60px;
+}
+#user-index-container h1{
+	color: #18332B;
+	padding-bottom: 20px;
+}
 
 
+#user-index-li{
+	border: 1px solid white;
+	width: 185px;
+	height: 280px;
+	display: inline-block;
+	padding-top: 10px;
+  margin-bottom: -103px;
+}
+#sign-up{
+	margin-bottom: 60px;
+}
+#sign-up div{
+	padding: 8px;
+}
+#sign-up input{
+	width: 250px;
+  height: 20px;
+}
+.devise-button{
+	color: white;
+  background: #18332B;
+  border:none;
+}
 
+#login{
+	margin-bottom: 60px;
+}
+#login div{
+	padding: 8px;
+}
+#login input{
+	width: 250px;
+  height: 20px;
+}
+#login-remember{
+	color: red;
+}
 
-
-
-
-
-
+#edit-login {
+	margin-bottom: 60px;
+}
+#edit-login div{
+	padding: 8px;
+}
+#edit-login input{
+	width: 250px;
+  height: 20px;
+}
