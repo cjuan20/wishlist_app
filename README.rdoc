@@ -1,5 +1,7 @@
 WishList App
 
+Link: wishlist-app120.herokuapp.com
+
 Description:
 A Ruby on Rails App using Shopsense API to get realtime fashion merchandise data and for users to curate individual shopping wishlist. 
 
