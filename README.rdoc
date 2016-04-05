@@ -1,9 +1,9 @@
-#WishList App
+WishList App
 
-###Description
+Description:
 A Ruby on Rails App using Shopsense API to get realtime fashion merchandise data and for users to curate individual shopping wishlist. 
 
-###Features
+Features:
 - Using Devise for user-authentication 
 - A trending page of most popular products 
 - Search functionality to display matching name merchandise and show more item option 
@@ -11,11 +11,11 @@ A Ruby on Rails App using Shopsense API to get realtime fashion merchandise data
 - Individual user information and wishlist page 
 - User can add and delete all merchandise to their wishlist 
 - User can add products to their wishlist from: 
-	-- Search results 
-	-- Trending merchandise 
-	-- Other user's wishlist 
+	- Search results 
+	- Trending merchandise 
+	- Other user's wishlist 
 
-###Tech used / Stack
+Tech used / Stack:
 - Ruby
 - Rails
 - Javascript / jQuery
