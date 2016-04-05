@@ -10,21 +10,26 @@
 		<img id="user-img" src="<%= current_user.img%>">
 		<h3><%= current_user.name%></h3>
 		<h4><%= current_user.city%></h4>
+		<br/>
+		<div id="useritems-container">
+			<ul>
+				<% current_user.lists.each do |list| %>
+					<li>
+						<h4><%= list.name %></h4>
+						<img id="useritems-img" src="<%= list.image %>">
+						<p><%= list.price %></p>
+						<% if list.stock = true %>
+			      	In Stock<br/>
+			        <a href="<%= list.url %>" target="_blank">BUY NOW</a><br/>
+			      <% else %>
+			        Out Of Stock<br/>
+			      <% end %>
 
-  	<% current_user.lists.each do |list| %>
-			<h4><%= list.name %></h4>
-			<img src="<%= list.image %>">
-			<p><%= list.price %></p>
-			<% if list.stock = true %>
-      	In Stock<br/>
-        <a href="<%= list.url %>" target="_blank">BUY NOW</a><br/>
-      <% else %>
-        Out Of Stock<br/>
-      <% end %>
-
-		  <%= link_to "Delete", list, method: :delete %> 
-
-		<% end %>
+					  <%= link_to "Delete", list, method: :delete %> 
+					</li>
+				<% end %>
+			</ul>
+		</div>
 	<% end %>
 
 </div>

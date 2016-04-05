@@ -1,28 +1,27 @@
-== README
+#WishList App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+###Description
+A Ruby on Rails App using Shopsense API to get realtime fashion merchandise data and for users to curate individual shopping wishlist. 
 
-Things you may want to cover:
+###Features
+- Using Devise for user-authentication 
+- A trending page of most popular products 
+- Search functionality to display matching name merchandise and show more item option 
+- Users index page displaying all users and their wishlist 
+- Individual user information and wishlist page 
+- User can add and delete all merchandise to their wishlist 
+- User can add products to their wishlist from: 
+	-- Search results 
+	-- Trending merchandise 
+	-- Other user's wishlist 
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+###Tech used / Stack
+- Ruby
+- Rails
+- Javascript / jQuery
+- HTML / CSS
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+
+
+
